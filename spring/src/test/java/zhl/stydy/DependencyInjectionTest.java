@@ -16,7 +16,7 @@ class DependencyInjectionTest {
     @BeforeEach
     void setUp() {
         beanFactory =
-                new ClassPathXmlApplicationContext("METE-INF/dependency-injection.xml");
+                new ClassPathXmlApplicationContext("META-INF/dependency-injection.xml");
     }
 
     @Test()

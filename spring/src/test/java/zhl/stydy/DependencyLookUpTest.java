@@ -19,7 +19,7 @@ class DependencyLookUpTest {
     @BeforeEach
     void setUp() {
         beanFactory =
-                new ClassPathXmlApplicationContext("METE-INF/dependency-look-up.xml");
+                new ClassPathXmlApplicationContext("META-INF/dependency-look-up.xml");
     }
 
     @Test

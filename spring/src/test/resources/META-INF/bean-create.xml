@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="static" class="zhl.study.domain.User" factory-method="createUser"/>
+
+    <bean id="factory" class="zhl.study.domain.User" factory-bean="defaultUserFactory" factory-method="creatUser" />
+
+    <bean id="defaultUserFactory" class="zhl.study.factory.DefaultUserFactory" />
+
+    <bean id="userFactoryBean" class="zhl.study.factory.UserFactoryBean"/>
+
+    <bean id="springServiceLoad" class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
+        <property name="serviceType" value="zhl.study.factory.IUserFactory" />
+    </bean>
+
+</beans>
