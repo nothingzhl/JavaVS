@@ -1,11 +1,5 @@
 package zhl.stydy;
 
-import java.util.Iterator;
-import java.util.ServiceLoader;
-import java.util.Spliterator;
-import java.util.Spliterators;
-import java.util.stream.StreamSupport;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,11 +7,15 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import io.vavr.collection.Stream;
 import zhl.study.domain.User;
 import zhl.study.factory.DefaultUserFactory;
 import zhl.study.factory.IUserFactory;
+
+import java.util.Iterator;
+import java.util.ServiceLoader;
+import java.util.Spliterator;
+import java.util.Spliterators;
+import java.util.stream.StreamSupport;
 
 /**
  * 创建 bean
