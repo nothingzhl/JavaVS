@@ -15,6 +15,7 @@
         <module>core</module>
         <module>test</module>
         <module>fprp</module>
+        <module>effectivejava</module>
     </modules>
 
     <repositories>

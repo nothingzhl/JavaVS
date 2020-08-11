@@ -3,16 +3,16 @@ package zhl.stydy;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Configurable;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
-
-import org.springframework.context.annotation.Lazy;
-import zhl.study.factory.DefaultUserFactory;
 import zhl.study.factory.IUserFactory;
 
-@Configurable
-public class BeanInitializationTest {
+import java.util.concurrent.TimeUnit;
+
+/**
+ * bean gc
+ */
+public class BeanGCTest {
 
     private AnnotationConfigApplicationContext applicationContext;
 
@@ -23,6 +23,7 @@ public class BeanInitializationTest {
         applicationContext.refresh();
     }
 
+
     @Test
     void testPostConstruct() {
         IUserFactory bean = applicationContext.getBean(IUserFactory.class);
@@ -30,16 +31,12 @@ public class BeanInitializationTest {
         System.out.println(bean.creatUser());
     }
 
+
     @AfterEach
-    void tearDown() {
+    void tearDown() throws InterruptedException {
         applicationContext.close();
+        TimeUnit.SECONDS.sleep(2);
+        System.gc();
     }
-
-    @Bean(initMethod = "initMethod",destroyMethod = "doDestroy")
-    @Lazy
-    public DefaultUserFactory getUserFactory(){
-        return new DefaultUserFactory();
-    }
-
 
 }
