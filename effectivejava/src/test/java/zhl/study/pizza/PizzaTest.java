@@ -11,5 +11,6 @@ class PizzaTest {
                 .addTopping(Pizza.Topping.SAUSAGE)
                 .addTopping(Pizza.Topping.ONION)
                 .build();
+        System.out.println(nyPizza);
     }
 }

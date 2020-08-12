@@ -1,7 +1,5 @@
 package zhl.study.pizza;
 
-import java.util.Objects;
-
 public class Calzone extends Pizza {
 
     private final boolean sauceInside;
