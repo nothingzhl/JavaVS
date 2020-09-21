@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 import org.junit.Assert;
 import org.junit.Test;
 
-class SingleTest {
+public class SingleTest {
 
     @Test
     public void testSingle() {

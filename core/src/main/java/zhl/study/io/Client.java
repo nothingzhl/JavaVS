@@ -31,11 +31,9 @@ public final class Client {
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
 
-            BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-
             System.out.println("写入");
 
-            bufferedWriter.write(console.readLine());
+            bufferedWriter.write("hello world\n");
             bufferedWriter.flush();
 
             Thread.sleep(1000L);

@@ -36,13 +36,18 @@ public final class Server {
 
                 System.out.println("读取");
 
-                while (!bufferedReader.ready()){
-                }
 
-                System.out.println(bufferedReader.readLine());
+                bufferedReader.read();
+
+
+                String s = bufferedReader.readLine();
+                System.out.println(s);
+
+                BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+                String s1 = console.readLine();
 
                 System.out.println("写入");
-                bufferedWriter.write("wow");
+                bufferedWriter.write(s1+"\n");
                 bufferedWriter.flush();
 
                 Thread.sleep(1000L);
